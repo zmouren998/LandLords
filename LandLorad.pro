@@ -10,12 +10,16 @@ CONFIG += c++11
 
 SOURCES += \
     card.cpp \
+    cardpanel.cpp \
     main.cpp \
-    gamepanel.cpp
+    gamepanel.cpp \
+    player.cpp
 
 HEADERS += \
     card.h \
-    gamepanel.h
+    cardpanel.h \
+    gamepanel.h \
+    player.h
 
 FORMS += \
     gamepanel.ui
