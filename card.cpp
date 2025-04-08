@@ -11,9 +11,10 @@ void Card::setCardSuit(CardSuit suit){
 void Card::setCardPoint(CardPoint point){
     this->_point = point;
 }
-Card::CardSuit Card::suit(){
+Card::CardSuit Card::suit() const {
     return _suit;
 }
-Card::CardPoint Card::point(){
+Card::CardPoint Card::point() const {
     return _point;
 }
+

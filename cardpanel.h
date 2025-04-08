@@ -36,6 +36,7 @@ signals:
 
 protected:
     void paintEvent(QPaintEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
 private:
     QPixmap m_front;
     QPixmap m_back;

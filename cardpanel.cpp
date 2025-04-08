@@ -2,6 +2,7 @@
 
 #include <QPixmap>
 #include <QPainter>
+#include <QMouseEvent>
 
 CardPanel::CardPanel(QWidget *parent) : QWidget(parent)
 {

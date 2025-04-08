@@ -1,6 +1,8 @@
 #ifndef CARD_H
 #define CARD_H
 
+#include <QHash>
+#include <QVector>
 
 class Card{
 public:
@@ -37,11 +39,25 @@ public:
     // 设置属性和获取属性
     void setCardSuit(CardSuit suit);
     void setCardPoint(CardPoint point);
-    CardSuit suit();
-    CardPoint point();
+    CardSuit suit() const ;
+    CardPoint point() const ;
 private:
     CardSuit _suit;
     CardPoint _point;
+
 };
+
+typedef QVector<Card> CardList;
+
+//  全局函数声明
+inline bool operator==(const Card &a, const Card &b)
+{
+    return a.point() == b.point() && a.suit() == b.suit();
+}
+
+inline uint qHash(const Card &key, uint seed = 0)
+{
+    return qHash(static_cast<int>(key.point()) * 10 + static_cast<int>(key.suit()), seed);
+}
 
 #endif // CARD_H
