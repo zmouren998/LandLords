@@ -1,0 +1,98 @@
+[1mdiff --cc LandLorad.pro[m
+[1mindex 9b647a4,e375e54..0000000[m
+[1m--- a/LandLorad.pro[m
+[1m+++ b/LandLorad.pro[m
+[36m@@@ -11,7 -11,6 +11,10 @@@[m [mCONFIG += c++1[m
+  SOURCES += \[m
+      card.cpp \[m
+      cardpanel.cpp \[m
+[32m++<<<<<<< HEAD[m
+[32m +    cards.cpp \[m
+[32m++=======[m
+[32m++>>>>>>> 0f463c2428bf133bff15332ce56532b8fbbc8355[m
+      main.cpp \[m
+      gamepanel.cpp \[m
+      player.cpp[m
+[36m@@@ -19,7 -18,6 +22,10 @@@[m
+  HEADERS += \[m
+      card.h \[m
+      cardpanel.h \[m
+[32m++<<<<<<< HEAD[m
+[32m +    cards.h \[m
+[32m++=======[m
+[32m++>>>>>>> 0f463c2428bf133bff15332ce56532b8fbbc8355[m
+      gamepanel.h \[m
+      player.h[m
+  [m
+[1mdiff --cc cardpanel.cpp[m
+[1mindex 8ee3eed,2798a86..0000000[m
+[1m--- a/cardpanel.cpp[m
+[1m+++ b/cardpanel.cpp[m
+[36m@@@ -1,8 -1,7 +1,14 @@@[m
+  #include "cardpanel.h"[m
+[32m++<<<<<<< HEAD[m
+[32m +[m
+[32m +#include <QPixmap>[m
+[32m +#include <QPainter>[m
+[32m +#include <QMouseEvent>[m
+[32m++=======[m
+[32m+ #include "card.h"[m
+[32m+ [m
+[32m+ #include <QPainter>[m
+[32m++>>>>>>> 0f463c2428bf133bff15332ce56532b8fbbc8355[m
+  [m
+  CardPanel::CardPanel(QWidget *parent) : QWidget(parent)[m
+  {[m
+[36m@@@ -12,7 -11,7 +18,11 @@@[m
+  void CardPanel::setImage(QPixmap &front, QPixmap &back)[m
+  {[m
+      m_front = front;[m
+[32m++<<<<<<< HEAD[m
+[32m +    m_back = back;[m
+[32m++=======[m
+[32m+     m_back = back();[m
+[32m++>>>>>>> 0f463c2428bf133bff15332ce56532b8fbbc8355[m
+      setFixedSize(m_front.size());[m
+  [m
+      update();   // 设置图片之后重新绘制图片[m
+[36m@@@ -72,8 -71,3 +82,11 @@@[m [mvoid CardPanel::paintEvent(QPaintEvent [m
+      else[m
+          paint.drawPixmap(rect(),m_back);[m
+  }[m
+[32m++<<<<<<< HEAD[m
+[32m +[m
+[32m +void CardPanel::mousePressEvent(QMouseEvent *event)[m
+[32m +{[m
+[32m +[m
+[32m +}[m
+[32m++=======[m
+[32m++>>>>>>> 0f463c2428bf133bff15332ce56532b8fbbc8355[m
+[1mdiff --cc cardpanel.h[m
+[1mindex b9ba76d,0dc424d..0000000[m
+[1m--- a/cardpanel.h[m
+[1m+++ b/cardpanel.h[m
+[36m@@@ -2,8 -2,8 +2,13 @@@[m
+  #define CARDPANEL_H[m
+  [m
+  #include <QWidget>[m
+[32m++<<<<<<< HEAD[m
+[32m +#include "card.h"[m
+[32m +[m
+[32m++=======[m
+[32m+ [m
+[32m+ class Card;[m
+[32m++>>>>>>> 0f463c2428bf133bff15332ce56532b8fbbc8355[m
+  class Player;[m
+  [m
+  class CardPanel : public QWidget[m
+[36m@@@ -36,7 -36,6 +41,10 @@@[m [msignals[m
+  [m
+  protected:[m
+      void paintEvent(QPaintEvent *event) override;[m
+[32m++<<<<<<< HEAD[m
+[32m +    void mousePressEvent(QMouseEvent *event) override;[m
+[32m++=======[m
+[32m++>>>>>>> 0f463c2428bf133bff15332ce56532b8fbbc8355[m
+  private:[m
+      QPixmap m_front;[m
+      QPixmap m_back;[m
