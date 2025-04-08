@@ -35,7 +35,7 @@ public:
     Card();
 
     // 设置属性和获取属性
-    void setCardSuit(CardPoint suit);
+    void setCardSuit(CardSuit suit);
     void setCardPoint(CardPoint point);
     CardSuit suit();
     CardPoint point();
