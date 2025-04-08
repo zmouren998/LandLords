@@ -2,13 +2,8 @@
 #define CARDPANEL_H
 
 #include <QWidget>
-<<<<<<< HEAD
 #include "card.h"
 
-=======
-
-class Card;
->>>>>>> 0f463c2428bf133bff15332ce56532b8fbbc8355
 class Player;
 
 class CardPanel : public QWidget
@@ -41,10 +36,8 @@ signals:
 
 protected:
     void paintEvent(QPaintEvent *event) override;
-<<<<<<< HEAD
     void mousePressEvent(QMouseEvent *event) override;
-=======
->>>>>>> 0f463c2428bf133bff15332ce56532b8fbbc8355
+
 private:
     QPixmap m_front;
     QPixmap m_back;

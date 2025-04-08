@@ -1,14 +1,12 @@
 #include "cardpanel.h"
-<<<<<<< HEAD
 
 #include <QPixmap>
 #include <QPainter>
 #include <QMouseEvent>
-=======
 #include "card.h"
 
 #include <QPainter>
->>>>>>> 0f463c2428bf133bff15332ce56532b8fbbc8355
+
 
 CardPanel::CardPanel(QWidget *parent) : QWidget(parent)
 {
@@ -18,11 +16,8 @@ CardPanel::CardPanel(QWidget *parent) : QWidget(parent)
 void CardPanel::setImage(QPixmap &front, QPixmap &back)
 {
     m_front = front;
-<<<<<<< HEAD
     m_back = back;
-=======
     m_back = back();
->>>>>>> 0f463c2428bf133bff15332ce56532b8fbbc8355
     setFixedSize(m_front.size());
 
     update();   // 设置图片之后重新绘制图片
@@ -82,11 +77,8 @@ void CardPanel::paintEvent(QPaintEvent *event)
     else
         paint.drawPixmap(rect(),m_back);
 }
-<<<<<<< HEAD
 
 void CardPanel::mousePressEvent(QMouseEvent *event)
 {
 
 }
-=======
->>>>>>> 0f463c2428bf133bff15332ce56532b8fbbc8355
