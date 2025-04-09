@@ -17,7 +17,6 @@ void CardPanel::setImage(QPixmap &front, QPixmap &back)
 {
     m_front = front;
     m_back = back;
-    m_back = back();
     setFixedSize(m_front.size());
 
     update();   // 设置图片之后重新绘制图片

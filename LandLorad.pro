@@ -11,23 +11,21 @@ CONFIG += c++11
 SOURCES += \
     card.cpp \
     cardpanel.cpp \
-<<<<<<< HEAD
     cards.cpp \
-=======
->>>>>>> 0f463c2428bf133bff15332ce56532b8fbbc8355
     main.cpp \
     gamepanel.cpp \
-    player.cpp
+    player.cpp \
+    robot.cpp \
+    userplayer.cpp
 
 HEADERS += \
     card.h \
     cardpanel.h \
-<<<<<<< HEAD
     cards.h \
-=======
->>>>>>> 0f463c2428bf133bff15332ce56532b8fbbc8355
     gamepanel.h \
-    player.h
+    player.h \
+    robot.h \
+    userplayer.h
 
 FORMS += \
     gamepanel.ui
