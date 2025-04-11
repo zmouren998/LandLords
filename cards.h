@@ -17,7 +17,6 @@ public:
         NoSort
     };
     Cards();
-
     // 添加card
     void add(const Card& card);
     void add(const Cards& cards);

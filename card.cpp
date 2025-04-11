@@ -5,6 +5,12 @@ Card::Card()
 
 }
 
+Card::Card(CardPoint point, CardSuit suit)
+{
+    _point = point;
+    _suit = suit;
+}
+
 void Card::setCardSuit(CardSuit suit){
     _suit = suit;
 }

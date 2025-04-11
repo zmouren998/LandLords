@@ -35,7 +35,8 @@ public:
         Card_End,
     };
     Card();
-
+    // 初始化牌的点数和花色
+    Card(CardPoint point, CardSuit suit);
     // 设置属性和获取属性
     void setCardSuit(CardSuit suit);
     void setCardPoint(CardPoint point);
@@ -58,6 +59,11 @@ inline bool operator==(const Card &a, const Card &b)
 inline uint qHash(const Card &key, uint seed = 0)
 {
     return qHash(static_cast<int>(key.point()) * 10 + static_cast<int>(key.suit()), seed);
+}
+
+inline Card::CardPoint& operator++(Card::CardPoint& cp){
+    cp = static_cast<Card::CardPoint>(static_cast<int>(cp) + 1);
+    return cp;
 }
 
 #endif // CARD_H
